@@ -77,6 +77,16 @@ defmodule ExTwimlTest do
     assert_twiml markup, "<Dial action=\"/calls/new\"><Number>1112223333</Number></Dial>"
   end
 
+  test "can render the <Brand> verb" do
+    markup = twiml do
+      brand action: "/calls/new", callReason: "some reason" do
+        number "1112223333"
+      end
+    end
+
+    assert_twiml markup, "<Brand action=\"/calls/new\" callReason=\"some reason\"><Number>1112223333</Number></Brand>"
+  end
+
   test "can render the <Sip> verb" do
     markup = twiml do
       sip "sip:test@example.com", username: "admin", password: "123"

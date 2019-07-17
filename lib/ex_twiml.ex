@@ -71,7 +71,7 @@ defmodule ExTwiml do
 
   @verbs [
     # Nested
-    :gather, :dial, :message, :task,
+    :gather, :dial, :brand, :message, :task,
 
     # Non-nested
     :say, :number, :play, :sms, :sip, :client, :conference, :queue, :enqueue,
